@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
+	"time"
 
 	"github.com/gustavobelfort/42-moulinhate/src/cli"
 
@@ -9,11 +11,8 @@ import (
 	"github.com/common-nighthawk/go-figure"
 )
 
-// func getRandomExercise(level, retires int) {
-// 	Dir()
-// }
-
 func main() {
+	rand.Seed(time.Now().UnixNano())
 	myFigure := figure.NewFigure("42 - MoulinHate", "", true)
 	myFigure.Print()
 	p := prompt.New(

@@ -2,6 +2,7 @@ package cli
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 )
 
@@ -13,4 +14,8 @@ func CreateDirectory(directoryPath string) {
 	if pathErr != nil {
 		fmt.Println(pathErr)
 	}
+}
+
+func random(min int, max int) int {
+	return rand.Intn(max-min) + min
 }

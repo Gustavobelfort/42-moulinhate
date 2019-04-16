@@ -19,6 +19,8 @@ func Executor(in string) {
 	switch blocks[0] {
 	case "start":
 		StartExam()
+	case "grademe":
+		Correct()
 	}
 }
 

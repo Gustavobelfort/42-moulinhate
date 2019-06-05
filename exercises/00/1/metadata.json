@@ -1,0 +1,7 @@
+{
+    "exerciseName": "aff_a",
+    "expectedFile": "aff_a.c",
+    "allowedFunctions": "write",
+    "exerciseNumber": 1,
+    "exerciseLevel": 0
+}

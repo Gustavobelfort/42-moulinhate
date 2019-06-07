@@ -14,7 +14,12 @@ import (
 
 var fileURL = "https://gustavobelfort.dev/42-moulinhate/exercises/"
 
-// FromServer fetches the assigned exercise number from the server
+// Exercise fetches the assigned exercise number from the server
+func Exercise(exerciseNumber, exerciseLevel int) {
+	metadata := metadataFromServer(exerciseNumber, exerciseLevel)
+	subjectFromServer(metadata)
+}
+
 func metadataFromServer(exerciseNumber, exerciseLevel int) status.Exercise {
 
 	var info status.Exercise
@@ -56,6 +61,11 @@ func subjectFromServer(metadata status.Exercise) {
 	_, err = io.Copy(out, resp.Body)
 	if err != nil {
 		panic(err.Error())
+	}
+
+	pathErr := os.MkdirAll("./exam/rendu/"+metadata.ExerciseName, 0777)
+	if pathErr != nil {
+		fmt.Println(pathErr)
 	}
 }
 
